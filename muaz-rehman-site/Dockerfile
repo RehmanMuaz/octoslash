@@ -1,13 +1,6 @@
-FROM node:8.7.0-alpine
+FROM node:14
 
-RUN mkdir -p /srv/app/muaz-rehman-site
-WORKDIR /srv/app/muaz-rehman-site
-
-COPY package.json /srv/app/muaz-rehman-site
-COPY package-lock.json /srv/app/muaz-rehman-site
+WORKDIR /Projects/octoslash
+COPY /muaz-rehman-site/src/ /var/www/html
 
 RUN npm install
-
-COPY . /srv/app/muaz-rehman-site
-
-CMD [ "npm","start" ]

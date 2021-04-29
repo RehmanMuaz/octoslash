@@ -2,7 +2,7 @@ version: '3'
 
 services: 
     site:
-        build: ./muaz=rehman-site
+        build: ./muaz-rehman-site
         environment: 
             - REACT_APP_PORT=${REACT_APP_PORT}
         expose:
@@ -10,8 +10,6 @@ services:
         ports: 
             - ${REACT_APP_PORT}:${REACT_APP_PORT}
         volumes: 
-            - ./muaz-rehman-site/src:/srv/app/muaz-rehman-site/src
-            - ./muaz-rehman-site/public:/srv/app/muaz-rehman-site/public
-        links:
-            - server
+            - ./muaz-rehman-site/src:/var/www/html
+            - ./muaz-rehman-site/public:/var/www/html/public
         command: npm run start
