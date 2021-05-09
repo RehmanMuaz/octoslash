@@ -40,7 +40,7 @@ function About() {
               <button type="button"
                   onClick={(e) => {
                     e.preventDefault();
-                    window.open("https://github.com/RehmanMuaz/StatSite", "_blank")
+                    window.open("https://www.linkedin.com/in/muazrehman/", "_blank")
                   }}
               >
                 <div className='ButtonItemRow'>  
