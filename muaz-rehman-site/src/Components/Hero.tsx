@@ -1,4 +1,4 @@
-import '../Resources/App.css';
+import '../Resources/App.css'
 
 function Hero() {
   return (

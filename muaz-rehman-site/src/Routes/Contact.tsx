@@ -1,5 +1,5 @@
-import logo from '../Resources/logo.svg';
-import '../Resources/App.css';
+import logo from '../Resources/logo.svg'
+import '../Resources/App.css'
 
 function Contact() {
   return (
@@ -19,7 +19,7 @@ function Contact() {
         </a>
       </header>
     </div>
-  );
+  )
 }
 
-export default Contact;
+export default Contact

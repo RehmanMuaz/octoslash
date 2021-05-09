@@ -1,0 +1,8 @@
+:root {
+    --bg-dark: rgba(255, 255, 255, 0.025);
+    --main:#FF5043;
+    --warn:#F2AD85;
+    --info:#31B9DB;
+    --danger:#F16F61;
+    --main-dark:#3FA693;
+}

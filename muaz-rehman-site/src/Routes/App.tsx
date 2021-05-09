@@ -1,35 +1,38 @@
-import logo from '../Resources/logo.svg';
-import '../Resources/App.css';
-import { Typography } from "antd";
+import React, { useCallback } from 'react'
+import ReactDOM from 'react-dom'
+import '../Resources/index.css'
+import Home from './Home'
+import Projects from './Projects'
+import Contact from './Contact'
+import About from './About'
+import { BrowserRouter as Router, Switch, Route,  NavLink, useLocation } from "react-router-dom"
+import { Layout, Menu, Breadcrumb } from 'antd'
+import Navbar from '../Components/Navbar'
+import { useSpring } from 'react-spring'
+import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
+import '../Resources/App.css'
 
-const { Title, Paragraph, Text, Link } = Typography;
 
 function App() {
+  const [{ scroll }, set] = useSpring(() => ({ scroll: 0 }))
+  const onScroll = useCallback(e => void set({ scroll: e.target.scrollTop / (window.innerHeight / 2) }) , [])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Work In Progress!
-        </p>
-        <a
-          className="App-link"
-          href="https://muaz.ca"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Muaz Rehman
-        </a>
-      </header>
-      <section className="Section" style={{backgroundColor: "#E8A87C"}}>
-        <div className="Content">
-          <Title>HI</Title>
-          <Paragraph>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident quod quidem omnis exercitationem saepe culpa? Aliquid, nisi obcaecati maxime iste natus nam id quis mollitia veniam ut accusantium aspernatur harum?</Paragraph>
-        </div>
-       
-      </section>
-    </div>
-  );
+    <Router>
+      <Navbar/>
+      <Switch>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/projects">
+          <Projects />
+        </Route>
+        <Route path="/">
+        <Home />
+        </Route>
+      </Switch>
+    </Router>
+  )
 }
 
-export default App;
+export default App
