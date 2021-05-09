@@ -3,6 +3,7 @@ import { FiExternalLink, FiGithub } from 'react-icons/fi'
 import { FaLinkedin } from 'react-icons/fa'
 import '../Resources/App.css'
 import { motion } from 'framer-motion'
+import profile from '../Resources/profile-crop.jpg'
 
 
 function About() {
@@ -29,8 +30,8 @@ function About() {
           transition={{ duration: 5, repeatType: "reverse", repeat: Infinity, ease: 'easeInOut' }}  
         > 
             <div className='FloaterPicContainer'>  
-              <img className='FloaterPic' src='/Images/profile-crop.jpg'/>
-              <img className='FloaterPicBG' src='/Images/profile-crop.jpg'/>
+              <img className='FloaterPic' src={profile}/>
+              <img className='FloaterPicBG' src={profile}/>
             </div>
             <div className='FloaterTextSection'>
               <h2>Muaz Rehman</h2>
